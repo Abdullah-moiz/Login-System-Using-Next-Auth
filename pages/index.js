@@ -26,16 +26,15 @@ export default function Home() {
     }
 
     const res = await logged_in(formData);
-    console.log(res);
+    if (res.error) {
+      toast.error(res.error);
+    }
+    else {
+      toast.success(res.message);
+      router.push('/profile');
+    }
   }
 
-  useEffect(() => {
-    getSession().then((session) => {
-      if (session) {
-        router.replace('/profile');
-      }
-    });
-  }, [router]);
 
   return (
     <>

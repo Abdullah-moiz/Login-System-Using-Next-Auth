@@ -5,28 +5,28 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from 'bcryptjs';
 
 
+
 export default NextAuth({
     //Configure JWT
     session: {
         jwt: true,
     },
-
+    
     providers: [
         CredentialsProvider({
             name: "credentials",
-          
-            async authorize(credentials , req) {
-                console.log(credentials)
+            credentials: {},
+            async authorize(credentials, req) {
+                await connectDB();
+                const { email, password } = credentials ;
                 // Add logic here to look up the user from the credentials supplied
-                const user = await User.findOne({
-                    email: credentials.email,
-                });
+                const user = await User.findOne({email});
                 console.log(user)
                 if (!user) {
                     throw new Error('No user found with the email');
                 }
 
-                const checkPassword = await compare(credentials.password, user.password);
+                const checkPassword = await compare(password, user.password);
                 console.log(checkPassword)
                 if (!checkPassword) {
                     throw new Error('Password doesnt match');
@@ -34,6 +34,9 @@ export default NextAuth({
                 return user;
             }
         })
-    ]
+    ],
+    pages: {
+        signIn: "index",
+    },
 });
 

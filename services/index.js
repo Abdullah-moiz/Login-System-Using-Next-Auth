@@ -1,14 +1,15 @@
 import { signIn } from 'next-auth/react';
+import { Router } from 'next/router';
 
 
 export const logged_in = async (FormData) => {
     console.log(FormData)
     const { email, password } = FormData;
     const status = await signIn('credentials', {
+        redirect: false,
         email: email,
         password: password,
     });
-    console.log(status)
     return status
 }
 
