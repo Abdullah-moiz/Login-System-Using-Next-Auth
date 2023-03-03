@@ -1,14 +1,18 @@
 import { logged_in } from '@/services';
 import Head from 'next/head'
 import Link from 'next/link';
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { getSession } from 'next-auth/react';
+
 
 
 export default function Home() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState({ email: "", password: "" });
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,13 +26,16 @@ export default function Home() {
     }
 
     const res = await logged_in(formData);
-    if (res.success) {
-      toast.success(res.message)
-    }
-    else {
-      toast.error(res.message)
-    }
+    console.log(res);
   }
+
+  useEffect(() => {
+    getSession().then((session) => {
+      if (session) {
+        router.replace('/profile');
+      }
+    });
+  }, [router]);
 
   return (
     <>
