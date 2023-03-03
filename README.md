@@ -1,3 +1,35 @@
+#ScreenShots
+
+#### LOGIN FORM 
+![image](https://user-images.githubusercontent.com/90745903/222726395-88389f4d-551d-4ce4-92ef-1377f4bd8b9f.png)
+
+##### Validations
+![image](https://user-images.githubusercontent.com/90745903/222726529-5957427e-2a5f-49b9-a041-db3b28c8adc4.png)
+
+![image](https://user-images.githubusercontent.com/90745903/222726670-fe4e6fd8-a710-4bf4-a1b6-068495194d52.png)
+
+![image](https://user-images.githubusercontent.com/90745903/222726743-7d7d81dd-6f1d-47d3-a121-3e9d3b24e4f9.png)
+
+#### REGISTER FORM 
+
+![image](https://user-images.githubusercontent.com/90745903/222726859-d5c7a36e-96ff-4e95-b452-b30229b633ba.png)
+
+![image](https://user-images.githubusercontent.com/90745903/222726981-3c93c7db-3474-4295-9616-9693f634b84a.png)
+
+![image](https://user-images.githubusercontent.com/90745903/222727048-b484c545-2138-4a4d-8c0f-f0f408575e03.png)
+
+![image](https://user-images.githubusercontent.com/90745903/222727096-fef6823a-7d6a-47eb-abc5-254700cb8bfb.png)
+
+### WELCOME PAGE
+![image](https://user-images.githubusercontent.com/90745903/222727167-1d653d55-d153-420f-a518-a73e7f965d4b.png)
+
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
